@@ -1,9 +1,11 @@
+import HomeComponent from '@/components/Home/HomeComponent';
 import Container from '@/hoc/Container/Container';
 
-const Home: React.FC = () => {
+
+const Home:React.FC = () => {
   return (
     <Container>
-      <div>Home</div>
+      <HomeComponent />
     </Container>
   );
 };
