@@ -4,13 +4,14 @@ import logo from '@/assets/images/Home/Logo.png';
 import CustomButton from '../UI/CustomButton';
 import Language from '../language';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 type aboutTimeJobs = {
   day: string;
   time: string;
 };
 
-const HomeComponent = () => {
+const HomeComponent:React.FC = () => {
   const aboutTimeJobs: aboutTimeJobs[] = [
     { day: 'Понеділок', time: '10.00-18.00' },
     { day: 'Вівторок', time: '10.00-18.00' },

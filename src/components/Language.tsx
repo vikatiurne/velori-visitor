@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import CustomButton from './UI/CustomButton';
 
-const Language = () => {
+const Language:React.FC = () => {
     const [language, setLanguage] = useState('UA');
 
     const { pathname } = useLocation();
