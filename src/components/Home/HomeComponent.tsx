@@ -1,8 +1,8 @@
 import bannerImage from '@/assets/images/Home/Homebanner.png';
 import iconNavigation from '@/assets/images/Home/Navigation.png';
 import logo from '@/assets/images/Home/Logo.png';
-import CustomButton from '../UI/CustomButton';
-import Language from '../language';
+import CustomButton from '@/components/UI/CustomButton';
+import Language from '@/components/Language';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
@@ -11,7 +11,7 @@ type aboutTimeJobs = {
   time: string;
 };
 
-const HomeComponent:React.FC = () => {
+const HomeComponent: React.FC = () => {
   const aboutTimeJobs: aboutTimeJobs[] = [
     { day: 'Понеділок', time: '10.00-18.00' },
     { day: 'Вівторок', time: '10.00-18.00' },
@@ -38,12 +38,18 @@ const HomeComponent:React.FC = () => {
         </div>
         {/* END  Language */}
         <div className="z-40 relative flex flex-col items-center   pt-[110px] md:pt-[215px] w-full md:w-[520px] ">
-          <img src={logo} className="h-[96px] w-[150px] md:h-[148px] md:w-[230px]" alt="logo" />
+          <img
+            src={logo}
+            className="h-[96px] w-[150px] md:h-[148px] md:w-[230px]"
+            alt="logo"
+          />
           <h1 className="text-[#15C5CE] font-semibold text-[30px] md:text-[44px] leading-[40px] text-center mt-[64px] md:mt-[105px]  ">
             Ласкаво просимо <br />
             до нашого ресторану
           </h1>
-          <h2 className="font-[500] my-[24px] md:text-[24px] md:my-[55px]">Стіл №1</h2>
+          <h2 className="font-[500] my-[24px] md:text-[24px] md:my-[55px]">
+            Стіл №1
+          </h2>
           <div className="flex flex-col gap-3 w-full md:gap-6">
             <CustomButton
               className="h-[57px] w-full rounded-[6px] text-white md:font-medium md:h-[72px] md:text-[32px]"
