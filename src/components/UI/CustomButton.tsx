@@ -26,9 +26,7 @@ const CustomButton: React.FC<OptionalButtonProps> = ({
     chat = 'w-[calc(100%-2px)] h-[calc(100%-2px)]',
   }
 
-  const handleClick = () => {
-    onClick();
-  };
+  const handleClick = () => onClick();
 
   return (
     <button
@@ -36,11 +34,11 @@ const CustomButton: React.FC<OptionalButtonProps> = ({
       onClick={handleClick}
     >
       <span
-        className={`${currentButtonType[buttonType]} ${borderRadius} ${whiteBtn && 'bg-white group-hover:bg-gradientToTop'} absolute inset-0 z-10 translate-x-[.075rem] translate-y-[.075rem] transition duration-300 ease-out`}
+        className={`${currentButtonType[buttonType]} ${borderRadius} ${whiteBtn ? 'bg-white group-hover:bg-gradientToTop' : 'group-hover:bg-white'} absolute inset-0 z-10 translate-x-[.075rem] translate-y-[.075rem] transition duration-300 ease-out`}
       ></span>
 
       <span
-        className={`relative z-20 transition duration-300 ease-out group ${whiteBtn && 'group-hover:bg-transperent group-hover:text-white'}`}
+        className={`relative z-20 transition duration-300 ease-out group ${whiteBtn ? 'group-hover:bg-transparent group-hover:text-white?' : 'group-hover:bg-white'} `}
       >
         {children}
       </span>

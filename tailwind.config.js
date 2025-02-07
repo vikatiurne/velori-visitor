@@ -9,9 +9,8 @@ export default {
           'linear-gradient(335deg, #15C5CE 31.01%, #0B5768 83.54%)',
         gradientToTop: 'linear-gradient(to top, #15C5CE, #0C677C)',
       },
-
-      borderColor: {
-        gradientToTop: 'linear-gradient(to top, #15C5CE, #0C677C)',
+      colors: {
+        'green-chat': 'rgba(152, 248, 204, 0.27)',
       },
       textColor: {
         gradientToTop: 'transparent',
@@ -23,6 +22,8 @@ export default {
         raleway: ['Raleway', 'sans-serif'],
         elMessiri: ['El Messiri', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        sansation: ['Sansation', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       screens: {
         tablet: { max: '1024px' },
@@ -54,6 +55,12 @@ export default {
         },
         '.btn-shadow': {
           boxShadow: '0 4px 4px rgba(0, 0, 0, 0.25)',
+        },
+        '.scrollbar-hidden': {
+          'scrollbar-width': 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
         },
       });
     },
