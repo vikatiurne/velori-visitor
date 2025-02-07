@@ -1,6 +1,11 @@
 import Scroll from '@/components/UI/Scroll';
 import ChatHeader from '@/components/Chat/ChatHeader';
 import ProductQuantityControl from './ProductQuantityControl';
+import OrderAded from './OrderAded';
+import OrderComments from './OrderComments';
+import { useState } from 'react';
+import OrderPayment from './OrderPayment';
+import CustomButton from '../UI/CustomButton';
 
 // Нужно будет тащить с бд
 const order = [
@@ -16,11 +21,30 @@ interface OrderProps {
 }
 
 const Order: React.FC<OrderProps> = ({ setIsShowOrder }) => {
+  const [dataChekbox, setOrderAdedChekbox] = useState([
+    { title: 'Сметана', price: 10, checked: false, id: 1 },
+    { title: 'Майонез', price: 10, checked: false, id: 2 },
+  ]);
+  const [orderComments, setOrderComments] = useState('');
+  const paymentSelect = [
+    { value: '', title: 'Готівка' },
+    { value: '', title: 'Varian 2' },
+    { value: '', title: 'Variant 3' },
+  ];
+
   const title = (
     <h2 className="text-center font-bold text-sm mb-4 font-sansation">
       Замовлення #{orderId}
     </h2>
   );
+
+  const ChangeChecked = (item) => {
+    setOrderAdedChekbox(
+      dataChekbox.map((elem) =>
+        elem.id === item.id ? { ...elem, checked: !elem.checked } : elem
+      )
+    );
+  };
 
   return (
     <Scroll
@@ -31,7 +55,7 @@ const Order: React.FC<OrderProps> = ({ setIsShowOrder }) => {
       }
       title={title}
       footer={null}
-      classWrap="px-2"
+      classWrap="px-2 pb-10 md:text-[20px]"
     >
       <ul className="list-decimal list-inside ">
         {order.map((item, i) => (
@@ -47,6 +71,33 @@ const Order: React.FC<OrderProps> = ({ setIsShowOrder }) => {
           </li>
         ))}
       </ul>
+      <OrderAded
+        title={'Добавить в заказ'}
+        dataChekbox={dataChekbox}
+        ChangeChecked={ChangeChecked}
+      />
+      <OrderComments
+        title={'Коментар до замовлення'}
+        orderComments={orderComments}
+        setOrderComments={setOrderComments}
+      />
+      <OrderPayment paymentSelect={paymentSelect} />
+      <div className="flex justify-end mt-[50px] gap-[8px]">
+        {/* Спешил , не понял как указать бордер у КастомБтн */}
+        <button
+          className="h-[38px] px-[8px] text-[#4B4B4B] border rounded-[4px] md:px-[20px] md:h-46px md:text-[20px]"
+          onClick={() => setIsShowOrder(false)}
+        >
+          Скасувати
+        </button>
+        <CustomButton
+          children={'Підтвердити'}
+          buttonType={'login'}
+          active={true}
+          className="h-[38px] px-[8px] text-white rounded-[4px] md:px-[20px] md:h-46px md:text-[20px]"
+          onClick={() => (window.location.href = '/')}
+        />
+      </div>
     </Scroll>
   );
 };

@@ -10,6 +10,7 @@ const ChatPage: React.FC = () => {
   ) : (
     <Order setIsShowOrder={setIsShowOrder} />
   );
+
 };
 
 export default ChatPage;
