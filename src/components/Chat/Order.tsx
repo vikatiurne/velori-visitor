@@ -28,9 +28,18 @@ const Order: React.FC<OrderProps> = ({ setIsShowOrder }) => {
   const [orderComments, setOrderComments] = useState('');
   const paymentSelect = [
     { value: '', title: 'Готівка' },
-    { value: '', title: 'Varian 2' },
+    { value: '', title: 'Variant 2' },
     { value: '', title: 'Variant 3' },
   ];
+
+  const calculatePrice = () => {
+    for(const i of dataChekbox){
+      if(i.checked){
+        return 284 + i.price
+      }
+    }
+    return 284
+  }
 
   const title = (
     <h2 className="text-center font-bold text-sm mb-4 font-sansation">
@@ -81,7 +90,7 @@ const Order: React.FC<OrderProps> = ({ setIsShowOrder }) => {
         orderComments={orderComments}
         setOrderComments={setOrderComments}
       />
-      <OrderPayment paymentSelect={paymentSelect} />
+      <OrderPayment paymentSelect={paymentSelect} calculatePrice={calculatePrice}/>
       <div className="flex justify-end mt-[50px] gap-[8px]">
         {/* Спешил , не понял как указать бордер у КастомБтн */}
         <button
