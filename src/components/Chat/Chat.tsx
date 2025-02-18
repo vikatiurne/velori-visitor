@@ -79,7 +79,6 @@ const Chat: React.FC<ChatProps> = ({ setIsShowOrder }) => {
       setMessages((prevMessages) => [...prevMessages, newMessage]);
       setInputText('');
 
-      console.log(wordsArr);
       // нужно будет поменять на ожидание ответа от сервера
       setTimeout(() => {
         const botMessage: Message = {

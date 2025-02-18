@@ -42,6 +42,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ setIsShowOrder }) => {
         borderRadius="rounded-sm"
         whiteBtn
         className="btn-shadow px-2 py-1 hover:shadow-none"
+        onClick={()=>console.log("Викликати офіціанта")}
       >
         <p
           className={`${styles['gradient-shadow-text']} flex flex-col hover:text-white text-lg sm:text-xl`}
