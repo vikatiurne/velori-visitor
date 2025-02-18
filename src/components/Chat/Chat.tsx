@@ -71,7 +71,7 @@ const Chat: React.FC<ChatProps> = ({ setIsShowOrder }) => {
   const handleSendMessage = () => {
     if (inputText.trim()) {
       const wordsArr = findKeywords(inputText);
-      const newMessage = {
+      const newMessage: Message = {
         text: inputText,
         sender: 'user',
         time: new Date().toISOString(),
@@ -106,8 +106,8 @@ const Chat: React.FC<ChatProps> = ({ setIsShowOrder }) => {
 
   const handleVoiceInput = () => {
     const recognition = new (window.SpeechRecognition ||
-      window.webkitSpeechRecognition)();
-    recognition.onresult = (event) => {
+      window.webkitSpeechRecognition)() as SpeechRecognition;
+    recognition.onresult = (event: SpeechRecognitionEvent) => {
       const transcript = event.results[0][0].transcript;
       setInputText(transcript);
     };

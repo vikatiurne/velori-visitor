@@ -30,7 +30,6 @@ export default {
         mobile: { max: '375px' },
         'customHover-gradient':
           'linear-gradient(0deg, rgb(12, 163, 171) 0%, rgb(5, 63, 75) 100%)',
-        'login-registration-image': "url('@/assets/images/Auth/bg-image.jpg')",
       },
       backgroundPosition: {
         'right-top': 'right top',

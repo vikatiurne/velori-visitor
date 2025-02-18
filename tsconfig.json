@@ -13,6 +13,6 @@
       "@/*": ["*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*","speechRecognition.d.ts"],
   "exclude": ["node_modules"]
 }

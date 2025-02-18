@@ -1,0 +1,20 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import bannerImage from '@/assets/images/Home/Homebanner.png';
+import iconNavigation from '@/assets/images/Home/Navigation.png';
+import logo from '@/assets/images/Home/Logo.png';
+import CustomButton from '@/components/UI/CustomButton';
+import Language from '@/components/Language';
+import { Link } from 'react-router-dom';
+const HomeComponent = () => {
+    const aboutTimeJobs = [
+        { day: 'Понеділок', time: '10.00-18.00' },
+        { day: 'Вівторок', time: '10.00-18.00' },
+        { day: 'Середа', time: '10.00-18.00' },
+        { day: 'Четвер', time: '10.00-18.00' },
+        { day: 'П’ятниця', time: '10.00-18.00' },
+        { day: 'Субота', time: '10.00-18.00' },
+        { day: 'Неділя', time: '10.00-18.00' },
+    ];
+    return (_jsxs("div", { className: "font-playfair h-full", children: [_jsxs("div", { className: "h-[565px] md:h-[900px] flex justify-center shadow-md border-b-8", children: [_jsx("img", { src: bannerImage, className: "absolute top-0 left-0 right-0 h-[589px] md:h-[900px] object-cover w-full border-b-2 border-gray-500 z-30 md:shadow-custom  object-[-70px_0px] md:object-[0px_0px] ", alt: "bg-image" }), _jsx("div", { className: "absolute top-0 left-0 right-0 h-[589px] md:h-[900px]  bg-gray-100 bg-opacity-50 z-40" }), _jsx("div", { className: "absolute right-[20px] top-[32px] z-50", children: _jsx(Language, {}) }), _jsxs("div", { className: "z-40 relative flex flex-col items-center   pt-[110px] md:pt-[215px] w-full md:w-[520px] ", children: [_jsx("img", { src: logo, className: "h-[96px] w-[150px] md:h-[148px] md:w-[230px]", alt: "logo" }), _jsxs("h1", { className: "text-[#15C5CE] font-semibold text-[30px] md:text-[44px] leading-[40px] text-center mt-[64px] md:mt-[105px]  ", children: ["\u041B\u0430\u0441\u043A\u0430\u0432\u043E \u043F\u0440\u043E\u0441\u0438\u043C\u043E ", _jsx("br", {}), "\u0434\u043E \u043D\u0430\u0448\u043E\u0433\u043E \u0440\u0435\u0441\u0442\u043E\u0440\u0430\u043D\u0443"] }), _jsx("h2", { className: "font-[500] my-[24px] md:text-[24px] md:my-[55px]", children: "\u0421\u0442\u0456\u043B \u21161" }), _jsxs("div", { className: "flex flex-col gap-3 w-full md:gap-6", children: [_jsx(CustomButton, { className: "h-[57px] w-full rounded-[6px] text-white md:font-medium md:h-[72px] md:text-[32px]", children: 'Меню', buttonType: 'login', active: true }), _jsx(Link, { to: '/chat', children: _jsx(CustomButton, { className: "h-[57px] w-full rounded-[6px] text-white md:font-medium md:h-[72px] md:text-[32px]", children: 'Чат із ШІ-офіціантом', buttonType: 'login', active: true }) })] })] })] }), _jsxs("div", { className: "h-[350px] ", children: [_jsxs("div", { className: "z-30 relative", children: [_jsxs("h3", { className: "mt-[30px] md:mt-[40px] flex flex-col  justify-center md:text-[26px] md:ml-10", children: [_jsx("span", { className: "pl-8 md:pl-[44px]", children: "\u0410\u0434\u0440\u0435\u0441\u0430" }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx("img", { src: iconNavigation, className: "h-[22px] w-[22px] md:h-[33px]  md:w-[32px]", alt: "icon navigation" }), _jsx("span", { children: " \u041A\u0440\u0430\u0457\u043D\u0430, \u041C\u0456\u0441\u0442\u043E, \u0412\u0443\u043B\u0438\u0446\u044F" })] })] }), _jsxs("div", { className: "flex flex-col  items-center", children: [_jsx("h4", { className: "text-center text-[24px] md:text-[36px] font-semibold text-[#15C5CE] mt-[50px] md:mt-[70px]", children: "\u0413\u043E\u0434\u0438\u043D\u0438 \u0440\u043E\u0431\u043E\u0442\u0438" }), _jsx("ul", { className: "flex flex-col gap-[10px] md:gap-[16px] w-full  md:w-[390px] px-[35px] mt-[20px]", children: aboutTimeJobs.map((item, index) => (_jsxs("li", { className: "flex justify-between text-[14px] md:text-[20px]", children: [_jsx("span", { children: item.day }), _jsx("span", { children: item.time })] }, index))) })] })] }), _jsx("span", { className: "absolute left-0 top-[589px] md:top-[900px] bg-[#EEFCFC] h-[452px] md:h-[655px]  w-full z-0" })] })] }));
+};
+export default HomeComponent;

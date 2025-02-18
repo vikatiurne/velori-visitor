@@ -4,8 +4,10 @@ import CustomButton from '../UI/GradientTextBtn';
 
 interface ChatHeaderProps {
   children: React.ReactNode;
-  setIsShowOrder?: () => void;
+  setIsShowOrder?: (value: boolean) => void;
 }
+
+
 
 const styles = {
   'gradient-shadow-text':
@@ -23,7 +25,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ setIsShowOrder }) => {
       </div>
       <button
         className="flex items-center flex-col gap-1"
-        onClick={setIsShowOrder}
+        onClick={() => setIsShowOrder}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -42,7 +44,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ setIsShowOrder }) => {
         borderRadius="rounded-sm"
         whiteBtn
         className="btn-shadow px-2 py-1 hover:shadow-none"
-        onClick={()=>console.log("Викликати офіціанта")}
+        onClick={() => console.log('Викликати офіціанта')}
       >
         <p
           className={`${styles['gradient-shadow-text']} flex flex-col hover:text-white text-lg sm:text-xl`}

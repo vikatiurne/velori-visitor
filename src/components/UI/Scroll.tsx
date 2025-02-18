@@ -7,6 +7,7 @@ interface ScrollProps {
   footer?: ReactNode;
   title?: ReactNode;
   classWrap?: string;
+  classContent?: string;
   width?: string;
   height?: string;
   disableScrollIndicator?: boolean;
